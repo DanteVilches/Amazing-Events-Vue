@@ -34,14 +34,6 @@ const app = createApp({
 			let fn = (events) => events.category;
 			this.categories = [...new Set(this.pastEvents.filter(fn).map(fn))];
 		},
-		find() {
-			this.filteredEvents = this.pastEvents.filter((events) =>
-				events.name
-					.toLowerCase()
-					.trim()
-					.includes(this.inputSearch.toLowerCase().trim())
-			);
-		},
 	},
 
 	computed: {
