@@ -74,12 +74,37 @@
 			</nav>
 		</header>
 		<main class="d-flex w-100 justify-content-center align-items-center">
-			<section
-				id="sectionDetail"
-				class="d-flex justify-content-center align-items-center gap-3 p-4 border border-dark heightSection"
-			>
-				<div class="loader"></div>
-			</section>
+			<div id="app">
+				<section
+					id="sectionDetail"
+					class="d-flex justify-content-center align-items-center gap-3 p-4 border border-dark heightSection"
+				>
+					<div
+						class="w-50 h-75 p-3 border border-dark d-flex justify-content-center align-items-center detailImg gap-2"
+					>
+						<img :src="evento.image" :alt="evento.name" />
+					</div>
+					<div
+						class="d-flex flex-column justify-content-center align-items-center w-50 h-75 p-3 border border-dark detailP"
+					>
+						<h3>{{evento.name}}</h3>
+
+						<div>
+							<p>Category: {{evento.category}}</p>
+
+							<p>Date: {{evento.date}}</p>
+							<p>Capacity: {{evento.capacity}}</p>
+							<p>
+								{{ evento.estimate ? "Estimate: " + evento.estimate : "Asisstance: " +
+								evento.assistance }}
+							</p>
+							<p>{{evento.description}}</p>
+
+							<h3>Price: ${{evento.price}}</h3>
+						</div>
+					</div>
+				</section>
+			</div>
 		</main>
 		<footer class="d-flex justify-content-between mt-auto">
 			<div class="icons d-flex gap-4">
@@ -91,7 +116,7 @@
 				<h3>Cohort</h3>
 			</section>
 		</footer>
-		<script src="./assets/javascript/data.js"></script>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 		<script src="./assets/javascript/details.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
